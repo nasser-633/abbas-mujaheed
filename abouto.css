@@ -1,0 +1,55 @@
+.main{
+    width: 150px;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(int3.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 80px;
+}
+.navbar{
+  width: 1200px;
+  margin: auto;
+  height: 0px;
+  background-position: center;
+
+}
+.icon{
+  width: 20px;
+  float: left;
+
+  height: 5px;
+}
+
+.logo{
+  color: #ff7200;
+  
+}
+.box{
+  background-image: url(int3.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 60%;
+  padding: 10px;
+  height: 800px;
+  display: block;
+  outline-style: double;
+  outline-color: yellow;
+  margin: auto;
+  background-color: beige;
+  float: left;
+}
+.box1{
+  height: 200px;
+  width: 350px;
+  background-color: aquamarine;
+  text-align: center;
+  color: blue;
+
+}
+.box2{
+  height: 200px;
+  width: 350px;
+  background-color: aquamarine;
+  text-align: center;
+  color: blue;
+
+}

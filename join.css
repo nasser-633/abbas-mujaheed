@@ -1,0 +1,41 @@
+body{
+    background-image: linear-gradient(to right,#16bffd,orange,brown);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+}
+.login-form{
+    text-align: center;
+    width: 270px;
+    margin: 8% auto 0;
+    padding: 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    background-image: url(image.jpg);
+    border-top-right-radius: 150px;
+    border-top-left-radius: 150px;
+}
+.input{
+    border-radius: 10px;
+    padding: 8px;
+    margin: 10px 0;
+    border: 2px solid white;
+    color: red;
+}
+h1{
+    color: rgb(189, 237, 15);
+}
+p{
+    color: white;
+}
+button{
+    border-radius: 10px;
+    padding: 5px;
+    width: 50%;
+    background-color: #f29d20;
+}
+a{
+    color: lightskyblue;
+}

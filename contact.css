@@ -1,0 +1,26 @@
+.main{
+    width: 150px;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(pic2.jpg);
+    background-position: center;
+    background-size: 30px;
+    background-image: url(int4.jpg);
+    height: 80px;
+}
+.navbar{
+  width: 1200px;
+  margin: auto;
+  height: 0px;
+  background-position: center;
+
+}
+.icon{
+  width: 20px;
+  float: left;
+
+  height: 5px;
+}
+
+.logo{
+  color: #ff7200;
+  
+}

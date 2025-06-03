@@ -126,28 +126,34 @@ body {
 
 /* Specific Section Styles with Images */
 
+/* In abouto.css */
+
 .hero-section {
     position: relative;
-    padding: 80px 50px; /* More padding for hero */
-    color: #fff; /* White text over image */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
-    background-image: url(int1.jpg); /* Hero Background Image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 12px 12px 0 0; /* Rounded top corners for hero section */
+    padding: 80px 50px;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+
+    /* --- MODIFIED BACKGROUND STYLES BELOW --- */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(int1.jpg); /* Added overlay and new image */
+    background-size: auto; /* Changed to auto for tiling */
+    background-repeat: repeat; /* Ensure tiling is active */
+    background-position: center; /* Center the first tile */
+    /* --- MODIFIED BACKGROUND STYLES ABOVE --- */
+
+    border-radius: 12px 12px 0 0;
 }
 
 .hero-section h1 {
-    color: #fff; /* White title */
-    font-size: 4em; /* Even larger for hero */
+    color: #fff;
+    font-size: 4em;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     margin-bottom: 10px;
 }
 
 .hero-section .tagline {
-    color: #f5f5f5; /* Light white tagline */
-    font-size: 1.5em; /* Larger tagline */
+    color: #f5f5f5;
+    font-size: 1.5em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
@@ -176,20 +182,40 @@ body {
 }
 
 
+/* In abouto.css */
+
 .values-bg-image {
     background-image: url(int4.jpg); /* Example Values Background Image */
     background-size: cover;
     background-position: center;
-    color: #333;
+    color: #fff; /* Changed to white for all text in this section */
     /* Optional: add a slight transparent overlay if text isn't clear */
-    /* background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(int4.jpg); */
+    /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(int4.jpg); /* Example: 50% black overlay */
 }
+
 .values-bg-image h2 {
-    color: #e67e22; /* Orange accent */
-    border-color: #e67e22;
+    color: #fff; /* Changed heading color to white */
+    border-color: #fff; /* Changed border color to white */
 }
+
+.values-bg-image p {
+    color: #fff; /* Changed paragraph color to white */
+}
+
+.values-bg-image li {
+    color: #fff; /* Changed list item color to white */
+}
+
 .values-bg-image li::before {
-    color: #e67e22; /* Orange bullets for values */
+    content: "\2022"; /* Unicode for a solid circle bullet */
+    color: #ffd700; /* Changed bullet color to a contrasting color like gold */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 

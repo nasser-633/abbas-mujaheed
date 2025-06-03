@@ -1,49 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Al Maida Org</title>
-  <link rel="stylesheet" href="home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Maida Org</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
 
-  <div class="main">
-    <div class="navbar">
-      <div class="icon">
-        <a href="home.html"><h1 class="logo">AlMaida</h1></a>
-      </div>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <a href="home.html"><h1 class="logo">AlMaida</h1></a>
+            </div>
+        </div>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="home.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+            <a href="term.html">Terms of Use</a>
+            <a href="join.html">Join Us</a>
+        </div>
+
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Al Maida Organisation</h1>
+                <p class="tagline">Working Together for a Better Future.</p>
+                <a href="about.html" class="cta-button-link">
+                    <button class="cta-button">Learn More</button>
+                </a>
+            </div>
+        </div>
     </div>
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="home.html">Home</a>
-      <a href="about.html">About us</a>
-      <a href="contact.html">Contact</a>
-      <a href="term.html">Terms of Use</a>
-      <a href="join.html">Join Us</a>
+
+    <div class="content-sections-wrapper">
+        <section class="mission-preview">
+            <div class="section-container">
+                <h2>Our Mission</h2>
+                <p>Al Maida Organisation is dedicated to empowering communities through sustainable development initiatives. We strive to create lasting positive change by focusing on education, health, and economic empowerment.</p>
+                <a href="about.html" class="secondary-button">Read Our Full Story</a>
+            </div>
+        </section>
+
+        <section class="focus-areas">
+            <div class="section-container">
+                <h2>Our Focus Areas</h2>
+                <div class="area-cards">
+                    <div class="card">
+                        <h3>Education & Empowerment</h3>
+                        <p>Providing access to quality education and empowering individuals with valuable skills for a brighter future.</p>
+                        <img src="int2.jpg" alt="Education" class="card-image"> </div>
+                    <div class="card">
+                        <h3>Health & Well-being</h3>
+                        <p>Promoting health awareness and facilitating access to essential healthcare services for underserved populations.</p>
+                        <img src="int3.jpg" alt="Health" class="card-image"> </div>
+                    <div class="card">
+                        <h3>Sustainable Development</h3>
+                        <p>Implementing eco-friendly practices and supporting initiatives that foster long-term community resilience.</p>
+                        <img src="int4.jpg" alt="Development" class="card-image"> </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-us-cta">
+            <div class="section-container">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Join Al Maida Organisation and be part of our impactful journey. Whether through volunteering, donations, or partnerships, your support helps us achieve our mission.</p>
+                <a href="join.html" class="primary-button">Get Involved Today!</a>
+            </div>
+        </section>
     </div>
 
-    <div class="hero">
-      <div class="hero-content">
-        <h1>Welcome to Al Maida Organisation</h1>
-        <p class="tagline">Working Together for a Better Future.</p>
-        <button class="cta-button">Learn More</button>
-      </div>
-    </div>
+    <footer class="page-footer">
+        <p>&copy; 2025 Al Maida Organisation. All rights reserved.</p>
+        <p><a href="mnrotich2@gmail.com">Privacy Policy</a> | <a href="mnrotich2@gmail.com">Contact Us</a></p>
+    </footer>
 
-  </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("mySidenav").classList.add("open");
+        }
 
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("mySidenav").classList.add("open"); // Add the 'open' class
-    }
-
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("mySidenav").classList.remove("open"); // Remove the 'open' class
-    }
-  </script><br><br>
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("mySidenav").classList.remove("open");
+        }
+    </script>
 </body>
 </html>

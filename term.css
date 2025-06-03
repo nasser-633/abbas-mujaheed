@@ -1,93 +1,131 @@
-body{
-height: 0px;
-margin-top: 0;
-padding: 0px;
-background-size: auto;
-font-family: sans-serif;
-background-image: url(int1.jpg);
-}
-.main{
-  width: 150px;
-  background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(pic2.jpg);
-  background-position: center;
-  background-size: 30px;
-  background-color: aliceblue;
-  height: 80px;
-}
-.navbar{
-width: 1200px;
-margin: auto;
-height: 0px;
-background-position: center;
+/* term.css */
 
-}
-.icon{
-width: 20px;
-float: left;
-
-height: 5px;
-}
-
-.logo{
-color: #ff7200;
-
-}
-
-h2{
-    color: yellow;
-    background-size: 100px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 60px;
-    font-style: italic;
-    font-weight: bolder;
-    background-color: transparent;
-    color: red
-}
-header {
-text-align: center;
-left: 0;
-right: 10px;
-top: 30px;
-background-color: hsl(143, 88%, 46%);
-height: 300px;
-width: 150px;
-font-family: fantasy;
-font-weight: bolder;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
-display: flex;
-align-items: center;
-box-shadow: 0 0 25px 0 black;
-}
-header * {
-display: block;
-}
-header li {
-margin: 20px;
-}
-header li a {
-color: blue;
-text-decoration: none;
-display: block;
-width: 60px;
-}
-header li a:hover {
-    background-color: #555;
-    color: white;
-  }
-ul{
-    list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 300px;
-  height: 250px;
-}
-div {
-    width: 0px;
-    height: 0px;
-    padding: 0px;
-    border: 0px solid gray;
+/* Basic CSS Reset */
+body, h1, h2, p, ul, li {
     margin: 0;
-  }
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.7;
+}
+
+.page-header {
+    background-color: #eee;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.logo-container .logo {
+    color: #e67e22;
+    font-size: 2.4em; /* Slightly larger logo */
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px; /* Slightly more space below logo */
+}
+
+.marquee-container {
+    width: 100%;
+}
+
+.marquee-container marquee {
+    color: #1976d2;
+    font-size: 1.2em;
+    padding: 12px; /* Slightly more padding */
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 8px; /* More rounded */
+    margin: 0;
+}
+
+.main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #fff;
+    background-image: url(int1.jpg);
+    background-size: auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.terms-container h1 {
+    font-size: 3em; /* Larger main title */
+    color: #e67e22;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold; /* Make main title bold */
+}
+
+.terms-container .intro {
+    color: #555;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 1.15em; /* Slightly larger intro text */
+}
+
+.terms-section {
+    margin-bottom: 60px; /* More space between sections */
+}
+
+.terms-section h2 {
+    font-size: 2.2em; /* Slightly larger section titles */
+    color: #007bff;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #007bff; /* Thicker border */
+    padding-bottom: 10px;
+    font-weight: bold; /* Make section titles bold */
+}
+
+.terms-section p {
+    margin-bottom: 18px; /* More space between paragraphs */
+    font-size: 1.05em; /* Slightly larger paragraph text */
+}
+
+.terms-section ul {
+    padding-left: 35px; /* More indent for lists */
+    margin-bottom: 18px;
+    list-style-type: disc;
+}
+
+.terms-section li {
+    margin-bottom: 10px; /* More space between list items */
+    font-size: 1.05em; /* Slightly larger list text */
+}
+
+.page-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0; /* More padding */
+    margin-top: 40px; /* More margin above footer */
+}
+
+.page-footer p {
+    margin: 8px 0; /* More margin for footer text */
+    font-size: 1em; /* Slightly larger footer text */
+}
+
+.page-footer a {
+    color: #eee;
+    text-decoration: none;
+    margin: 0 12px; /* More spacing for links */
+    font-weight: bold; /* Make footer links bold */
+}
+
+.page-footer a:hover {
+    text-decoration: underline;
+}

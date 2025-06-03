@@ -1,55 +1,345 @@
-.main{
-    width: 150px;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(int3.jpg);
-    background-position: center;
+/* abouto.css */
+
+/* Basic CSS Reset */
+body, h1, h2, p, ul, li, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box; /* Ensure padding/border is included in element's total width/height */
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0; /* A slightly darker background */
+    color: #333;
+    line-height: 1.7;
+}
+
+.main {
+    padding: 20px;
+    background-color: #fcfcfc; /* A cleaner white/off-white for the header area */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+}
+
+.navbar {
+    padding: 15px 0; /* Adjust padding for visual balance */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none; /* Remove bottom border from navbar */
+}
+
+.logo {
+    color: #e67e22; /* Retain orange accent */
+    font-size: 3em; /* Make logo even larger and more prominent */
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Stronger shadow for impact */
+    letter-spacing: 1px; /* Add some letter spacing */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.logo:hover {
+    color: #d35400; /* Darker orange on hover */
+}
+
+
+/* Main Content Container Styling */
+.about-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto; /* More vertical margin */
+    background-color: #fff;
+    padding: 0; /* Removed padding here, sections will have their own */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    overflow: hidden; /* Ensures border-radius applies to child backgrounds */
+}
+
+/* Section Common Styles */
+.about-container section {
+    padding: 50px; /* Consistent padding for all sections */
+    margin-bottom: 0; /* Sections are contained, no external margin */
+    border-bottom: 1px solid #eee; /* Light divider between sections */
+}
+
+.about-container section:last-child {
+    border-bottom: none; /* No border for the last section */
+}
+
+/* Heading Styles */
+.about-container h1 {
+    font-size: 3.5em; /* Very large main heading */
+    color: #e67e22;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.about-container h2 {
+    font-size: 2.5em; /* Larger section titles */
+    color: #007bff;
+    margin-bottom: 25px;
+    text-align: center; /* Center section titles */
+    border-bottom: 3px solid #007bff; /* Thicker blue underline */
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Paragraph and List Styles */
+.about-container p {
+    font-size: 1.1em; /* Slightly larger base text */
+    color: #555;
+    margin-bottom: 1.2em; /* More line spacing for paragraphs */
+    line-height: 1.8;
+}
+
+.about-container ul {
+    padding-left: 30px;
+    list-style-type: none; /* Remove default bullet */
+}
+
+.about-container li {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    color: #555;
+    position: relative; /* For custom bullet point */
+    padding-left: 25px;
+}
+
+.about-container li::before {
+    content: "\2022"; /* Unicode for a solid circle bullet */
+    color: #007bff; /* Blue color for bullets */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/* Specific Section Styles with Images */
+
+.hero-section {
+    position: relative;
+    padding: 80px 50px; /* More padding for hero */
+    color: #fff; /* White text over image */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
+    background-image: url(int1.jpg); /* Hero Background Image */
     background-size: cover;
-    height: 80px;
-}
-.navbar{
-  width: 1200px;
-  margin: auto;
-  height: 0px;
-  background-position: center;
-
-}
-.icon{
-  width: 20px;
-  float: left;
-
-  height: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px 12px 0 0; /* Rounded top corners for hero section */
 }
 
-.logo{
-  color: #ff7200;
-  
+.hero-section h1 {
+    color: #fff; /* White title */
+    font-size: 4em; /* Even larger for hero */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
 }
-.box{
-  background-image: url(int3.jpg);
-  background-size: cover;
-  background-position: center;
-  width: 60%;
-  padding: 10px;
-  height: 800px;
-  display: block;
-  outline-style: double;
-  outline-color: yellow;
-  margin: auto;
-  background-color: beige;
-  float: left;
-}
-.box1{
-  height: 200px;
-  width: 350px;
-  background-color: aquamarine;
-  text-align: center;
-  color: blue;
 
+.hero-section .tagline {
+    color: #f5f5f5; /* Light white tagline */
+    font-size: 1.5em; /* Larger tagline */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
-.box2{
-  height: 200px;
-  width: 350px;
-  background-color: aquamarine;
-  text-align: center;
-  color: blue;
 
+.mission-vision {
+    background-color: #fefdfb; /* Very light subtle background */
+}
+
+.mission-box, .vision-box {
+    background-color: #ffffff; /* White background for individual boxes */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Softer shadow */
+}
+
+.story-bg-image {
+    background-image: url(int3.jpg); /* Example Story Background Image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    padding: 70px 50px;
+}
+.story-bg-image h2, .story-bg-image p {
+    color: #fff;
+    border-color: #fff; /* White border for headings on dark background */
+}
+
+
+.values-bg-image {
+    background-image: url(int4.jpg); /* Example Values Background Image */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    /* Optional: add a slight transparent overlay if text isn't clear */
+    /* background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(int4.jpg); */
+}
+.values-bg-image h2 {
+    color: #e67e22; /* Orange accent */
+    border-color: #e67e22;
+}
+.values-bg-image li::before {
+    color: #e67e22; /* Orange bullets for values */
+}
+
+
+.team-section {
+    text-align: center;
+    background-color: #fcfcfc; /* Light background for team section */
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between team cards */
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.team-member-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px; /* Fixed width for cards */
+    flex-shrink: 0; /* Prevent shrinking too much */
+    transition: transform 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-8px); /* Lift higher on hover */
+}
+
+.team-member-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular images */
+    object-fit: cover; /* Ensure image covers the area */
+    margin-bottom: 15px;
+    border: 3px solid #007bff; /* Blue border for team photos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.team-member-card p {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 0;
+}
+
+.team-intro {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 700px; /* Limit width for better readability */
+    margin: 0 auto;
+}
+
+.section-divider {
+    height: 50px; /* Height of the divider space */
+    background-color: #eee; /* A light background color for the divider */
+    /* background-image: url(int4.jpg); /* Can be a subtle pattern or logo */
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    margin: 0; /* Ensure no extra margin */
+}
+
+
+/* Footer Styles */
+.page-footer {
+    background-color: #222; /* Darker footer */
+    color: #eee;
+    text-align: center;
+    padding: 30px 0; /* More padding */
+    margin-top: 0; /* Connects directly to the last section */
+    border-top: 1px solid #444;
+}
+
+.page-footer p {
+    margin: 8px 0;
+    font-size: 0.95em;
+}
+
+.page-footer a {
+    color: #007bff; /* Blue links in footer */
+    text-decoration: none;
+    margin: 0 15px; /* Wider spacing for links */
+    transition: color 0.3s ease;
+}
+
+.page-footer a:hover {
+    color: #81d4fa; /* Lighter blue on hover */
+    text-decoration: underline;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 2em;
+    }
+
+    .about-container {
+        padding: 0; /* Sections will handle padding */
+        margin: 20px auto;
+    }
+
+    .about-container section {
+        padding: 30px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section .tagline {
+        font-size: 1.1em;
+    }
+
+    .mission-vision {
+        flex-direction: column;
+    }
+
+    .mission-box, .vision-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .our-story h2, .our-values h2, .team-section h2, .mission-box h2, .vision-box h2 {
+        font-size: 1.8em;
+    }
+
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member-card {
+        width: 80%; /* Adjust width for smaller screens */
+        max-width: 250px;
+    }
+    .section-divider {
+        height: 30px;
+    }
 }

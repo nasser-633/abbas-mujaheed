@@ -1,4 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al Maida Org</title>
+  <link rel="stylesheet" href="home.css">
+</head>
 <body>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
+
   <div class="main">
     <div class="navbar">
       <div class="icon">
@@ -16,24 +26,24 @@
 
     <div class="hero">
       <div class="hero-content">
-        <h1>Welcome to AlMaida Organisation</h1>
+        <h1>Welcome to Al Maida Organisation</h1>
         <p class="tagline">Working Together for a Better Future.</p>
         <button class="cta-button">Learn More</button>
       </div>
     </div>
-
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
 
   </div>
 
   <script>
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("mySidenav").classList.add("open"); // Add the 'open' class
     }
 
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("mySidenav").classList.remove("open"); // Remove the 'open' class
     }
   </script><br><br>
-  You are at Al Maida Site.....!!!!!!! <br>
 </body>
+</html>

@@ -1,371 +1,562 @@
-/* abouto.css */
+/* abouto.css - Tailored for the new HTML structure */
 
-/* Basic CSS Reset */
-body, h1, h2, p, ul, li, img {
+/* Basic CSS Reset & Global Styles */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button, a, img {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    box-sizing: border-box; /* Ensure padding/border is included in element's total width/height */
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0; /* A slightly darker background */
-    color: #333;
-    line-height: 1.7;
-}
-
-.main {
-    padding: 20px;
-    background-color: #fcfcfc; /* A cleaner white/off-white for the header area */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Lighter shadow */
-}
-
-.navbar {
-    padding: 15px 0; /* Adjust padding for visual balance */
+    background-color: #f0f0f0; /* Light body background */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* Ensures space for vertical scrollbar, preventing content clipping */
+    padding-right: 17px; /* A common width for scrollbars. Adjust if needed. */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    color: #333; /* Dark text for readability on light background */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* --- Main Wrapper (if .main is used for general layout) --- */
+/* Your HTML has <div class="main"> wrapping the navbar. If it's just for that,
+   these styles are minimal. If it's meant to wrap more content, adjust as needed. */
+.main {
+    width: 100%;
+    /* No specific styles needed here unless it's a content container itself */
+}
+
+/* --- Navbar --- */
+.navbar {
+    width: 100%;
+    padding: 15px 40px;
+    display: flex; /* For aligning logo */
+    justify-content: flex-start; /* Aligns logo to the left */
     align-items: center;
-    border-bottom: none; /* Remove bottom border from navbar */
+    background-color: #1a1a1a; /* Dark navbar background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1000;
 }
 
-.logo {
-    color: #e67e22; /* Retain orange accent */
-    font-size: 3em; /* Make logo even larger and more prominent */
-    text-decoration: none;
+.navbar .icon {
+    /* If you want the icon div to have specific styling */
+}
+
+.navbar .logo {
+    color: #ff7200;
+    font-size: 2.5em;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Stronger shadow for impact */
-    letter-spacing: 1px; /* Add some letter spacing */
-    transition: color 0.3s ease; /* Smooth transition on hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
 }
 
-.logo:hover {
-    color: #d35400; /* Darker orange on hover */
+.navbar .logo:hover {
+    color: #d35400;
 }
 
-
-/* Main Content Container Styling */
+/* --- Main Content Container --- */
 .about-container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto; /* More vertical margin */
-    background-color: #fff;
-    padding: 0; /* Removed padding here, sections will have their own */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
-    overflow: hidden; /* Ensures border-radius applies to child backgrounds */
+    flex-grow: 1; /* Allows it to take available vertical space */
+    width: 100%;
+    max-width: 1200px; /* Limits content width */
+    margin: 40px auto; /* Centers the container and adds vertical margin */
+    padding: 0 20px; /* Horizontal padding for content */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content sections */
+    box-sizing: border-box;
 }
 
-/* Section Common Styles */
-.about-container section {
-    padding: 50px; /* Consistent padding for all sections */
-    margin-bottom: 0; /* Sections are contained, no external margin */
-    border-bottom: 1px solid #eee; /* Light divider between sections */
-}
-
-.about-container section:last-child {
-    border-bottom: none; /* No border for the last section */
-}
-
-/* Heading Styles */
-.about-container h1 {
-    font-size: 3.5em; /* Very large main heading */
-    color: #e67e22;
-    margin-bottom: 20px;
+/* Common Card Style for Sections */
+/* Applying a base style to the sections that act as "cards" */
+.mission-vision,
+.our-story,
+.our-values,
+.team-section {
+    background-color: #ffffff; /* White background for sections */
+    border-radius: 15px;
+    padding: 50px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 900px; /* Max width for content within sections */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    color: #333;
     text-align: center;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures content doesn't spill out */
 }
 
-.about-container h2 {
-    font-size: 2.5em; /* Larger section titles */
-    color: #007bff;
-    margin-bottom: 25px;
-    text-align: center; /* Center section titles */
-    border-bottom: 3px solid #007bff; /* Thicker blue underline */
-    padding-bottom: 15px;
-    font-weight: bold;
-}
-
-/* Paragraph and List Styles */
-.about-container p {
-    font-size: 1.1em; /* Slightly larger base text */
-    color: #555;
-    margin-bottom: 1.2em; /* More line spacing for paragraphs */
-    line-height: 1.8;
-}
-
-.about-container ul {
-    padding-left: 30px;
-    list-style-type: none; /* Remove default bullet */
-}
-
-.about-container li {
-    margin-bottom: 12px;
-    font-size: 1.1em;
-    color: #555;
-    position: relative; /* For custom bullet point */
-    padding-left: 25px;
-}
-
-.about-container li::before {
-    content: "\2022"; /* Unicode for a solid circle bullet */
-    color: #007bff; /* Blue color for bullets */
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-
-/* Specific Section Styles with Images */
-
-/* In abouto.css */
-
+/* --- Hero Section --- */
 .hero-section {
     position: relative;
-    padding: 80px 50px;
+    padding: 100px 20px; /* Increased vertical padding for hero text */
     color: #fff;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 
-    /* --- MODIFIED BACKGROUND STYLES BELOW --- */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(int1.jpg); /* Added overlay and new image */
-    background-size: auto; /* Changed to auto for tiling */
+    /* Tiling background with built-in overlay (since hero-overlay div is gone) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(int1.jpg); /* Darker overlay */
+    background-size: auto; /* For tiling the image */
     background-repeat: repeat; /* Ensure tiling is active */
-    background-position: center; /* Center the first tile */
-    /* --- MODIFIED BACKGROUND STYLES ABOVE --- */
+    background-position: center;
 
-    border-radius: 12px 12px 0 0;
+    min-height: 350px; /* Minimum height for the hero section */
+    border-radius: 15px;
+    margin-bottom: 40px;
+    display: flex; /* Use flex to center h1 and p vertically */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Ensure it spans the full width of its parent */
 }
 
 .hero-section h1 {
-    color: #fff;
-    font-size: 4em;
+    color: #ff7200; /* AlMaida brand color */
+    font-size: 3.5em;
+    margin-bottom: 15px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    margin-bottom: 10px;
+    line-height: 1.2;
 }
 
 .hero-section .tagline {
     color: #f5f5f5;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0;
+    line-height: 1.4;
 }
 
+/* --- Mission & Vision Section --- */
 .mission-vision {
-    background-color: #fefdfb; /* Very light subtle background */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px; /* Adjust padding for this section */
+    /* Remove background-color, border-radius, box-shadow if already on content-card */
+    background-color: transparent; /* Already set by content-card, but ensure */
+    box-shadow: none; /* Make this section's direct div transparent */
+    border: none;
+    max-width: 1000px; /* Allow mission/vision boxes more space */
 }
 
 .mission-box, .vision-box {
-    background-color: #ffffff; /* White background for individual boxes */
-    border: 1px solid #e0e0e0; /* Subtle border */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    background-color: #f9f9f9; /* Lighter background for individual boxes */
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1; /* Allows boxes to grow and shrink */
+    min-width: 280px; /* Minimum width before wrapping */
+    text-align: left;
+    transition: transform 0.3s ease;
 }
 
-.story-bg-image {
-    background-image: url(int3.jpg); /* Example Story Background Image */
+.mission-box:hover, .vision-box:hover {
+    transform: translateY(-5px);
+}
+
+.mission-box h2, .vision-box h2 {
+    color: #ff7200;
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-align: left;
+    border-bottom: 3px solid #16bffd; /* Accent color for underline */
+    padding-bottom: 10px;
+    width: fit-content; /* Makes underline fit text width */
+    margin-left: 0;
+    text-shadow: none;
+}
+
+.mission-box p, .vision-box p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* --- Section Divider --- */
+.section-divider {
+    width: 80%; /* Width of the divider */
+    height: 3px; /* Thickness of the divider */
+    background-color: #ccc; /* Color of the divider */
+    margin: 60px auto; /* Center it and add vertical spacing */
+    border-radius: 5px;
+    opacity: 0.5;
+}
+
+/* --- Our Story Section --- */
+.our-story {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(int3.jpg); /* Overlay + Image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    padding: 70px 50px;
-}
-.story-bg-image h2, .story-bg-image p {
-    color: #fff;
-    border-color: #fff; /* White border for headings on dark background */
+    padding: 80px 50px; /* Adjusted padding for content inside */
+    border-radius: 15px;
+    /* Other styles like background-color, box-shadow handled by .content-card */
 }
 
+.our-story h2 {
+    color: #ff7200;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #16bffd;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
 
-/* In abouto.css */
+.our-story p {
+    color: #f0f0f0;
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
 
-.values-bg-image {
-    background-image: url(int4.jpg); /* Example Values Background Image */
+/* --- Our Values Section --- */
+.our-values {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(int4.jpg); /* Overlay + Image */
     background-size: cover;
     background-position: center;
-    color: #fff; /* Changed to white for all text in this section */
-    /* Optional: add a slight transparent overlay if text isn't clear */
-    /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(int4.jpg); /* Example: 50% black overlay */
+    color: #fff;
+    padding: 80px 50px; /* Adjusted padding for content inside */
+    border-radius: 15px;
+    /* Other styles like background-color, box-shadow handled by .content-card */
 }
 
-.values-bg-image h2 {
-    color: #fff; /* Changed heading color to white */
-    border-color: #fff; /* Changed border color to white */
+.our-values h2 {
+    color: #ff7200;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #16bffd;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
 }
 
-.values-bg-image p {
-    color: #fff; /* Changed paragraph color to white */
+.our-values ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.values-bg-image li {
-    color: #fff; /* Changed list item color to white */
+.our-values li {
+    margin-bottom: 0;
+    font-size: 1em;
+    color: #f0f0f0;
+    position: relative;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* Adjusted padding for potential icons, even if not in HTML yet */
+    padding-left: 20px; /* No specific icon space unless fontawesome is added */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
 }
 
-.values-bg-image li::before {
-    content: "\2022"; /* Unicode for a solid circle bullet */
-    color: #ffd700; /* Changed bullet color to a contrasting color like gold */
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+.our-values li:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* If you add FontAwesome icons back to your HTML, uncomment this rule */
+/*
+.our-values li i {
+    font-size: 1.3em;
+    color: #16bffd;
+    margin-right: 15px;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
+*/
 
-
+/* --- Team Section --- */
 .team-section {
     text-align: center;
-    background-color: #fcfcfc; /* Light background for team section */
+    padding: 50px;
+    /* Other styles like background-color, box-shadow handled by .content-card */
+}
+
+.team-section h2 {
+    color: #ff7200;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #16bffd;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .team-members {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Space between team cards */
+    gap: 30px;
     margin-top: 30px;
     margin-bottom: 40px;
 }
 
 .team-member-card {
-    background-color: #fff;
+    background-color: #fcfcfc;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    width: 200px; /* Fixed width for cards */
-    flex-shrink: 0; /* Prevent shrinking too much */
+    width: 220px;
+    flex-shrink: 0;
     transition: transform 0.3s ease;
+    border: 1px solid #e0e0e0;
+    color: #333;
 }
 
 .team-member-card:hover {
-    transform: translateY(-8px); /* Lift higher on hover */
+    transform: translateY(-8px);
+    background-color: #ffffff;
 }
 
 .team-member-card img {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Circular images */
-    object-fit: cover; /* Ensure image covers the area */
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid #007bff; /* Blue border for team photos */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 3px solid #ff7200;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .team-member-card h3 {
     font-size: 1.5em;
-    color: #333;
+    color: #ff7200;
     margin-bottom: 5px;
 }
 
 .team-member-card p {
     font-size: 0.9em;
     color: #777;
-    margin-bottom: 0;
+    margin-bottom: 15px;
 }
+
+.member-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /* You would add FontAwesome icons here if they were in your HTML */
+}
+
+/* If you add FontAwesome icons back to your HTML, uncomment this rule */
+/*
+.member-social a {
+    color: #16bffd;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.member-social a:hover {
+    color: #ff7200;
+    transform: translateY(-2px);
+}
+*/
 
 .team-intro {
     font-size: 1.1em;
     color: #555;
-    max-width: 700px; /* Limit width for better readability */
+    max-width: 700px;
     margin: 0 auto;
+    text-shadow: none;
 }
 
-.section-divider {
-    height: 50px; /* Height of the divider space */
-    background-color: #eee; /* A light background color for the divider */
-    /* background-image: url(int4.jpg); /* Can be a subtle pattern or logo */
-    /* background-size: contain; */
-    /* background-repeat: no-repeat; */
-    /* background-position: center; */
-    margin: 0; /* Ensure no extra margin */
-}
-
-
-/* Footer Styles */
+/* --- Page Footer --- */
 .page-footer {
-    background-color: #222; /* Darker footer */
+    background-color: #1a1a1a; /* Dark footer background */
     color: #eee;
     text-align: center;
-    padding: 30px 0; /* More padding */
-    margin-top: 0; /* Connects directly to the last section */
-    border-top: 1px solid #444;
+    padding: 30px 20px;
+    margin-top: auto; /* Pushes footer to the bottom */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    line-height: 1.8; /* Better readability for text */
 }
 
 .page-footer p {
-    margin: 8px 0;
-    font-size: 0.95em;
+    margin-bottom: 5px; /* Spacing between lines */
 }
 
 .page-footer a {
-    color: #007bff; /* Blue links in footer */
+    color: #ff7200; /* Link color */
     text-decoration: none;
-    margin: 0 15px; /* Wider spacing for links */
     transition: color 0.3s ease;
 }
 
 .page-footer a:hover {
-    color: #81d4fa; /* Lighter blue on hover */
+    color: #d35400;
     text-decoration: underline;
 }
 
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .main {
-        padding: 10px;
-    }
-
-    .logo {
-        font-size: 2em;
-    }
-
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
     .about-container {
-        padding: 0; /* Sections will handle padding */
         margin: 20px auto;
+        padding: 0 15px;
     }
 
-    .about-container section {
-        padding: 30px 20px;
+    .hero-section {
+        min-height: 300px;
+        padding: 80px 20px; /* Adjust padding for smaller screens */
+        margin-bottom: 30px;
     }
-
     .hero-section h1 {
-        font-size: 2.5em;
+        font-size: 3em;
+    }
+    .hero-section .tagline {
+        font-size: 1.2em;
     }
 
-    .hero-section .tagline {
-        font-size: 1.1em;
+    .mission-vision,
+    .our-story,
+    .our-values,
+    .team-section {
+        padding: 40px;
+        margin-bottom: 30px;
+    }
+    .mission-vision h2,
+    .our-story h2,
+    .our-values h2,
+    .team-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 25px;
     }
 
     .mission-vision {
         flex-direction: column;
+        gap: 20px;
+    }
+    .mission-box, .vision-box {
+        min-width: unset;
+        width: 100%;
     }
 
-    .mission-box, .vision-box {
-        width: 100%;
+    .section-divider {
+        margin: 40px auto;
+    }
+
+    .our-values ul {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .our-values li {
+        font-size: 0.95em;
+        padding-left: 20px;
+    }
+
+    .team-members {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+    }
+    .team-member-card {
+        width: unset;
+        max-width: 250px;
+    }
+    .team-member-card img {
+        width: 100px;
+        height: 100px;
+    }
+    .team-member-card h3 {
+        font-size: 1.3em;
+    }
+    .team-member-card p {
+        font-size: 0.85em;
+    }
+
+    .page-footer {
+        padding: 25px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar { padding: 10px 15px; }
+    .navbar .logo { font-size: 2em; }
+
+    .hero-section {
+        min-height: 250px;
+        padding: 60px 15px; /* Further adjust padding for very small screens */
+        margin-bottom: 25px;
+    }
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    .hero-section .tagline {
+        font-size: 1em;
+    }
+
+    .mission-vision,
+    .our-story,
+    .our-values,
+    .team-section {
+        padding: 30px;
+        margin-bottom: 25px;
+    }
+    .mission-vision h2,
+    .our-story h2,
+    .our-values h2,
+    .team-section h2 {
+        font-size: 2em;
         margin-bottom: 20px;
     }
 
-    .our-story h2, .our-values h2, .team-section h2, .mission-box h2, .vision-box h2 {
-        font-size: 1.8em;
+    .section-divider {
+        margin: 30px auto;
+        width: 90%;
+    }
+
+    .our-values ul {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .our-values li {
+        font-size: 0.9em;
+        padding-left: 20px;
     }
 
     .team-members {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
+    }
+    .team-member-card {
+        width: 90%;
+        max-width: 280px;
+    }
+    .team-member-card img {
+        width: 90px;
+        height: 90px;
+    }
+    .team-member-card h3 {
+        font-size: 1.2em;
     }
 
-    .team-member-card {
-        width: 80%; /* Adjust width for smaller screens */
-        max-width: 250px;
-    }
-    .section-divider {
-        height: 30px;
+    .page-footer {
+        padding: 20px 10px;
     }
 }
